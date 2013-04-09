@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 public class IntTreeBag implements Cloneable
 {
-	private static IntBTNode root;
-	static ArrayList<Integer> al = new ArrayList<Integer>(); //in order to store data as an array
-	
+	private  IntBTNode root;
+	ArrayList<Integer> al = new ArrayList<Integer>(); //in order to store data as an array
+	private int iteration;
 	public IntTreeBag(int rootValue)
 	{//initialize empty bag
 		root = new IntBTNode(rootValue,null,null);
+		iteration = 0;
 	}
 	public void add(int element)
 	{
@@ -42,21 +43,46 @@ public class IntTreeBag implements Cloneable
 			}//outer else
 		}//while
 	}//add
-	/*public void addAll(IntTreeBag addend)
+	public void addAll(IntTreeBag addend)
+	{//add
+		int addedData[] = new int [addend.size()];
+		addedData = addend.getAllDatawihtArray();
+		for(int index = 0; index < addedData.length; index++)
+		{
+			this.add(addedData[index]);
+		}
+	}
+	
+	public IntTreeBag clone()
 	{
+		/*IntTreeBag copiedBag = new IntTreeBag(this.root.getData());
+		copied = IntBTNode.treeCopy(root);
+		return copied;
+		*/
+		IntTreeBag copiedBag = new IntTreeBag(this.root.getData());
+		int allData[] = this.getAllDatawihtArray();
+		for(int index = 1; index < allData.length; index++)
+		{
+			copiedBag.add(allData[index]);
+		}
+		return copiedBag;
+	}
+	
+	public int countOccurrences(int target)
+	{
+		int [] allData = getAllDatawihtArray();
+		int occurrence = 0;
+		for(int walker = 0; walker < this.size();walker++)
+		{
+			if(target == allData[walker])
+			{
+				occurrence++;
+			}
+		}
 		
+		return occurrence;
 	}
-	*/
-	/*public Object clone()
-	{
-		return 
-	}
-	*/
-	/*public int countOccurrences(int target)
-	{
-		
-	}
-	*/
+	
 	private boolean remove(int target)
 	{
 		IntBTNode cursor;
@@ -133,7 +159,7 @@ public class IntTreeBag implements Cloneable
 	}
 	/*
 	public static IntTreeBag union(IntTreeBag b1, IntTreeBag b2)
-	{
+	{//combine
 		
 	}
 	*/
@@ -161,7 +187,7 @@ public class IntTreeBag implements Cloneable
 		return al;
 	}
 	*/
-	private static int traverse(IntBTNode root)
+	private int traverse(IntBTNode root)
 	{
 		int res_data;
 		res_data = root.getData();
@@ -176,11 +202,44 @@ public class IntTreeBag implements Cloneable
 		}
 		return res_data;
 	}
-	public static ArrayList<Integer> getAlldata()
+	public ArrayList<Integer> getAlldata()
 	{
 		al = new ArrayList();
 		traverse(root);
 		return al;
+	}
+	public int[] getAllDatawihtArray()
+	{
+		/*Integer itemArray[] = new Integer [al.size()];
+		Integer temporalyArray[] = al.toArray(itemArray);
+		int alldata[] = new int [al.size()];
+		for(int i = 0; i < al.size(); i++)
+		{
+			alldata[i] = al.get(i).intValue();
+		}
+		return alldata;
+		*/
+		int alldata[] = new int [al.size()];
+		for(int i = 0; i < al.size(); i++)
+		{
+			alldata[i] = al.get(i);
+		}
+		return alldata;
+	}//getAllDatawihtArray
+	/*
+	public boolean contains(int target)
+	{
+		int index; 
+		boolean duplicate = false;
+		for(index = 0; (index < al.size())&&(target != ))
+		if()
+	}
+	*/
+	private int getNext()
+	{
+		iteration 
+		
+		return 
 	}
 	
 

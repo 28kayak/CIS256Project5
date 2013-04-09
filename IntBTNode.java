@@ -93,8 +93,8 @@ public class IntBTNode
 		{
 			System.out.print("   ");
 		}
-		System.out.print("print data ");
-		System.out.println(data);
+		//System.out.print("print data " );
+		System.out.println(data);//in order to print, every data printed from here
 		
 		//Print left subtree (or depth if there is a right child and no left child)
 		if(left != null)
