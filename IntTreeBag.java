@@ -238,12 +238,14 @@ public class IntTreeBag implements Cloneable
 		if()
 	}
 	*/
+	/*
 	private int getNext()
 	{
 		iteration 
 		
 		return 
 	}
+	*/
 	
 
 }

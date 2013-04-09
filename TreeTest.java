@@ -4,6 +4,7 @@ public class TreeTest
 	public static void main(String [] args)
 	{
 		IntTreeBag bag1 = new IntTreeBag(50);
+		IntTreeBag bag2 = new IntTreeBag(55);
 		bag1.add(45);
 		bag1.add(90);
 		bag1.add(100);
@@ -11,8 +12,19 @@ public class TreeTest
 		bag1.add(87);
 		bag1.add(45);
 		//bag1.add(88);
-		bag1.print(6);
+		bag1.print(8);
 		
+		System.out.println("---------bag2-------");
+		
+		bag2.add(40);
+		bag2.add(95);
+		bag2.add(1000);
+		bag2.add(8);
+		bag2.add(77);
+		bag2.add(43);
+		bag2.add(80);
+		bag2.add(75);
+		bag2.print(8);
 		
 		
 	//	ArrayList<Integer> ir = IntTreeBag.getAlldata();
@@ -30,7 +42,8 @@ public class TreeTest
 		System.out.printf("occurence of 100 = %d\n",bag1.countOccurrences(100));
 		
 		
-		
+		bag1.addAll(bag2);
+		bag1.print(10);
 		
 		//bag1.getAllDatawihtArray();
 		/*for(int i = 0; i < 10; i++)
