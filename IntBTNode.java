@@ -93,6 +93,7 @@ public class IntBTNode
 		{
 			System.out.print("   ");
 		}
+		System.out.print("print data ");
 		System.out.println(data);
 		
 		//Print left subtree (or depth if there is a right child and no left child)
@@ -106,7 +107,7 @@ public class IntBTNode
 			{
 				System.out.println("     ");
 			}
-			System.out.println("------");
+			System.out.println("print left------------");
 		} 
 		//print the right subtree (or a depth if there is a left child and no left child)
 		if(right != null)
@@ -118,7 +119,7 @@ public class IntBTNode
 			{
 				System.out.println("     ");
 			}
-			System.out.println("------");
+			System.out.println("print right ----------");
 		}	
 	}//print
 	public IntBTNode removeLeftmost()

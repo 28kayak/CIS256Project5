@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class IntTreeBag implements Cloneable
 {
-	private IntBTNode root;
+	private static IntBTNode root;
 	static ArrayList<Integer> al = new ArrayList<Integer>(); //in order to store data as an array
 	
 	public IntTreeBag(int rootValue)
