@@ -225,7 +225,7 @@ public class IntTreeBag implements Cloneable
 		for(int i = 0; i < al.size(); i++)
 		{
 			alldata[i] = al.get(i);
-			System.out.println(alldata[i]);
+			//System.out.println(alldata[i]);
 		}
 		return alldata;
 	}//getAllDatawihtArray

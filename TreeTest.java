@@ -22,10 +22,17 @@ public class TreeTest
 		System.out.println("allData.length = " + allData.length);
 		for(int i = 0; i < allData.length; i++)
 		{
-			System.out.println("for - loop");
-			System.out.println("i =" + allData[i]);
+			//System.out.println("for - loop");
+			System.out.printf("%d = %d\n",i,allData[i]);
 		}
-		bag1.getAllDatawihtArray();
+		System.out.printf("occurence of 0 = %d\n",bag1.countOccurrences(0));
+		System.out.printf("occurence of 45 = %d\n",bag1.countOccurrences(45));
+		System.out.printf("occurence of 100 = %d\n",bag1.countOccurrences(100));
+		
+		
+		
+		
+		//bag1.getAllDatawihtArray();
 		/*for(int i = 0; i < 10; i++)
 		{
 			System.out.println(bag1.al.get(i));
