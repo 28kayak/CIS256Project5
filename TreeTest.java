@@ -19,12 +19,13 @@ public class TreeTest
 		//System.out.println(ir);
 		int allData [] = bag1.getAllDatawihtArray();
 		//System.out.println(bag1.getAllDatawihtArray());
-		System.out.println("for - loop");
-		for(int i = 1; i < allData.length; i++)
+		System.out.println("allData.length = " + allData.length);
+		for(int i = 0; i < allData.length; i++)
 		{
 			System.out.println("for - loop");
 			System.out.println("i =" + allData[i]);
 		}
+		bag1.getAllDatawihtArray();
 		/*for(int i = 0; i < 10; i++)
 		{
 			System.out.println(bag1.al.get(i));

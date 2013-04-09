@@ -219,10 +219,13 @@ public class IntTreeBag implements Cloneable
 		}
 		return alldata;
 		*/
+		al = new ArrayList();
+		traverse(root);
 		int alldata[] = new int [al.size()];
 		for(int i = 0; i < al.size(); i++)
 		{
 			alldata[i] = al.get(i);
+			System.out.println(alldata[i]);
 		}
 		return alldata;
 	}//getAllDatawihtArray
