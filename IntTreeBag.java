@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Stack;
 public class IntTreeBag implements Cloneable
 {
 	private  IntBTNode root;
@@ -239,13 +240,8 @@ public class IntTreeBag implements Cloneable
 	}
 	*/
 	/*
-	private int getNext()
-	{
-		iteration 
-		
-		return 
-	}
-	*/
+	 *Create internal iterator methods 
+	 */
+	Stack<IntBTNode> stack = new Stack<IntBTNode>();
 	
-
 }
