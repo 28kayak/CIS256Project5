@@ -175,7 +175,7 @@ public class IntTreeBagTest
 					{
 						allData2 = bag2.getAllDatawihtArray();
 						System.out.println("---All data in bag2---");
-						for(int index = 0; index < bag1.size(); index++)
+						for(int index = 0; index < bag2.size(); index++)
 						{
 							System.out.printf("%d\n",allData2[index]);
 						}
@@ -212,7 +212,7 @@ public class IntTreeBagTest
 			}//switch
 			
 			
-		}while(action != 8);
+		}while(action != 9);
 		
 		
 		
