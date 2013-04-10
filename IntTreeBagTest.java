@@ -81,7 +81,7 @@ public class IntTreeBagTest
 						removedElement = scan.nextInt();
 						if(bag2.remove(removedElement))
 						{
-							System.out.printf("%d is successfully removed",removedElement);
+							System.out.printf("%d is successfully removed\n",removedElement);
 						}
 						else
 						{
