@@ -5,6 +5,7 @@ public class TreeTest
 	{
 		IntTreeBag bag1 = new IntTreeBag(50);
 		IntTreeBag bag2 = new IntTreeBag(55);
+		
 		bag1.add(45);
 		bag1.add(90);
 		bag1.add(100);
@@ -44,6 +45,23 @@ public class TreeTest
 		
 		bag1.addAll(bag2);
 		bag1.print(10);
+		
+		System.out.println("---union---");
+		IntTreeBag.union(bag1, bag2).print(10);
+		
+		System.out.println("-----------iterate-----------");
+		//bag1.print(10);
+		bag1.start();
+		while(bag1.isCurrent())
+		{
+			System.out.println("inside of loop");
+			System.out.println(bag1.getCurrent().getData());
+			bag1.advance();
+			
+			//bag1.print(10);
+			
+		}
+		
 		
 		//bag1.getAllDatawihtArray();
 		/*for(int i = 0; i < 10; i++)

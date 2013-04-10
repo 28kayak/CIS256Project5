@@ -47,6 +47,7 @@ public class IntBTNode
 	}
 	public void inorderPrint()
 	{
+		//left --->> middle --->> right
 		if(left != null)
 		{
 			left.inorderPrint();
@@ -63,7 +64,7 @@ public class IntBTNode
 	}
 	public void preorderPrint()
 	{
-		System.out.println(data);
+		System.out.println(data);//first shows root -> left -> right->....
 		if(left != null)
 		{
 			left.preorderPrint();
@@ -83,7 +84,7 @@ public class IntBTNode
 		{
 			right.postorderPrint();
 		}
-		System.out.println(data);
+		System.out.println(data);//show children first -->> root
 	}
 	public void print(int depth)
 	{

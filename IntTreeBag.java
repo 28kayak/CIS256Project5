@@ -23,6 +23,7 @@ public class IntTreeBag implements Cloneable
 				if(cursor.getLeft() == null)
 				{
 					cursor.setLeft(nodex);
+					stack.clear();
 					done = true;
 				}
 				else
@@ -35,6 +36,7 @@ public class IntTreeBag implements Cloneable
 				if(cursor.getRight()==null)
 				{
 					cursor.setRight(nodex);
+					stack.clear();
 					done = true;
 				}
 				else
@@ -158,35 +160,32 @@ public class IntTreeBag implements Cloneable
 	{
 		return IntBTNode.treeSize(root);
 	}
-	/*
+	
 	public static IntTreeBag union(IntTreeBag b1, IntTreeBag b2)
 	{//combine
-		
+		IntTreeBag unionTree = new IntTreeBag(b1.root.getData());// returned value
+		/*
+		int b1Data [] = b1.getAllDatawihtArray();
+		int b2Data [] = b2.getAllDatawihtArray();
+		int unionLength = b1Data.length + b2Data.length;
+		int unionData [] = new int [unionLength];
+		for(int index = 0; index < unionLength; index++)
+		{
+			//unionTree.add()
+			unionTree.addAll(addend)
+		}
+		*/
+		unionTree.addAll(b1);
+		unionTree.addAll(b2);
+		return unionTree;
 	}
-	*/
+	
 	public void print(int depth)
 	{
 		root.print(depth);
 	}
 	/*
-	private ArrayList<Integer> traverse(IntBTNode root)
-	{
-		IntBTNode cursor;
-		cursor = root;
-		if(cursor.getLeft() != null)
-		{
-			al.add(cursor.getData());
-			cursor = cursor.getLeft();
-			traverse(cursor);
-		}
-		if(cursor.getRight() != null)
-		{
-			al.add(cursor.getData());
-			cursor = cursor.getLeft();
-			traverse(cursor);
-		}
-		return al;
-	}
+	
 	*/
 	private int traverse(IntBTNode root)
 	{
@@ -230,18 +229,46 @@ public class IntTreeBag implements Cloneable
 		}
 		return alldata;
 	}//getAllDatawihtArray
-	/*
-	public boolean contains(int target)
-	{
-		int index; 
-		boolean duplicate = false;
-		for(index = 0; (index < al.size())&&(target != ))
-		if()
-	}
-	*/
+	
 	/*
 	 *Create internal iterator methods 
 	 */
-	Stack<IntBTNode> stack = new Stack<IntBTNode>();
-	
+	private Stack<IntBTNode> stack = new Stack<IntBTNode>();
+	public void start()
+	{
+		traverseNode(root);
+	}
+	public boolean isCurrent()
+	{
+		if(stack.isEmpty())
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}//isCurrent
+	public void advance()
+	{
+		stack.pop();
+	}
+	public IntBTNode getCurrent()
+	{
+		return stack.peek();
+	}//getCurrent
+	private void traverseNode(IntBTNode root)
+	{
+		
+		if(root.getLeft() != null)
+		{
+			traverseNode(root.getLeft());
+		}
+		//stack.push(root);//
+		if(root.getRight() != null)
+		{
+			traverseNode(root.getRight());
+		}
+		stack.push(root);
+	}
 }
