@@ -28,8 +28,9 @@ public class IntTreeBagTest
 			System.out.println("4: Add the contains of one bag to another");
 			System.out.println("5: Combine the bag with another and get 3rd bag");
 			System.out.println("6: Know occurence of a specific int value in a bag");
-			System.out.println("7:OutPut the all contains in a bag");
-			System.out.println("8: Exit this program");
+			System.out.println("7: OutPut the all contains in a bag");
+			System.out.println("8: Iterate");
+			System.out.println("9: Exit this program");
 			action = scan.nextInt();
 			
 			switch(action)
@@ -65,13 +66,27 @@ public class IntTreeBagTest
 					{
 						System.out.println("Enter the element that you are going to remove");
 						removedElement = scan.nextInt();
-						bag1.add(removedElement);
+						if(bag1.remove(removedElement))
+						{
+							System.out.printf("%d is successfully removed",removedElement);
+						}
+						else
+						{
+							System.out.println("can not find %d or can not remove successfully");
+						}
 					}
 					else if(bag == 2)
 					{
 						System.out.println("Enter the element that you are going to remove");
 						removedElement = scan.nextInt();
-						bag2.add(removedElement);
+						if(bag2.remove(removedElement))
+						{
+							System.out.printf("%d is successfully removed",removedElement);
+						}
+						else
+						{
+							System.out.println("can not find %d or can not remove successfully");
+						}
 					}
 					else
 					{
@@ -128,13 +143,13 @@ public class IntTreeBagTest
 					{
 						System.out.println("Enter the specific int you want to count");
 						specificInt = scan.nextInt();
-						System.out.printf("occurence of %d = %d\n",bag1.countOccurrences(specificInt));
-					}
+						System.out.printf("occurence of %d = %d\n",specificInt,bag1.countOccurrences(specificInt));
+					} 
 					else if(bag == 2)
 					{
 						System.out.println("Enter the specific int you want to count");
 						specificInt = scan.nextInt();
-						System.out.printf("occurence of %d = %d\n",bag2.countOccurrences(specificInt));
+						System.out.printf("occurence of %d = %d\n",specificInt,bag2.countOccurrences(specificInt));
 					}
 					else
 					{
@@ -153,7 +168,7 @@ public class IntTreeBagTest
 						System.out.println("---All data in bag1---");
 						for(int index = 0; index < bag1.size(); index++)
 						{
-							System.out.printf("%d = %d\n",index,allData1[index]);
+							System.out.printf("%d\n",allData1[index]);
 						}
 					}
 					else if(bag == 2)
@@ -162,7 +177,7 @@ public class IntTreeBagTest
 						System.out.println("---All data in bag2---");
 						for(int index = 0; index < bag1.size(); index++)
 						{
-							System.out.printf("%d = %d\n",index,allData2[index]);
+							System.out.printf("%d\n",allData2[index]);
 						}
 					}
 					else
@@ -171,6 +186,26 @@ public class IntTreeBagTest
 					}
 					break;
 				case 8:
+					System.out.println("---iterate bag1---");
+					bag1.start();
+					while(bag1.isCurrent())
+					{
+						
+						System.out.println(bag1.getCurrent().getData());
+						bag1.advance();
+					}
+					
+					System.out.println("---iterate bag2---");
+					bag2.start();
+					while(bag2.isCurrent())
+					{
+						System.out.println(bag2.getCurrent().getData());
+						bag2.advance();
+					}
+					System.out.println("Exist this program");
+					System.out.println("programmed by Kaya Ota");
+					break;
+				case 9:
 					System.out.println("Exist this program");
 					System.out.println("programmed by Kaya Ota");
 					break;

@@ -86,7 +86,7 @@ public class IntTreeBag implements Cloneable
 		return occurrence;
 	}
 	
-	private boolean remove(int target)
+	public boolean remove(int target)
 	{
 		IntBTNode cursor;
 		IntBTNode previousCursor;
@@ -264,11 +264,12 @@ public class IntTreeBag implements Cloneable
 		{
 			traverseNode(root.getLeft());
 		}
-		//stack.push(root);//
+		
+		stack.push(root);//
 		if(root.getRight() != null)
 		{
 			traverseNode(root.getRight());
 		}
-		stack.push(root);
+		//stack.push(root);
 	}
 }

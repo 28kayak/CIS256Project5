@@ -5,7 +5,7 @@ public class TreeTest
 	{
 		IntTreeBag bag1 = new IntTreeBag(50);
 		IntTreeBag bag2 = new IntTreeBag(55);
-		
+		bag1.start();
 		bag1.add(45);
 		bag1.add(90);
 		bag1.add(100);
@@ -57,9 +57,6 @@ public class TreeTest
 			System.out.println("inside of loop");
 			System.out.println(bag1.getCurrent().getData());
 			bag1.advance();
-			
-			//bag1.print(10);
-			
 		}
 		
 		
